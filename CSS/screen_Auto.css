@@ -1,0 +1,41 @@
+#tbx_anaCon{
+    position: absolute;
+    left: 267px; top: 462px;
+    width: 100px; height: 40px ;
+}
+
+#tbx_temCon{
+    position: absolute;
+    left: 169px; top: 462px;
+    width: 100px; height: 40px ;
+}
+
+#tbx_hzzCon{
+    position: absolute;
+    left: 389px; top: 354px;
+    width: 100px; height: 40px ;
+}
+
+#tbx_hrsCon{
+    position: absolute;
+    left: 610px; top: 353px;
+    width: 100px; height: 40px ;
+}
+
+#tbx_metCon{
+    position: absolute;
+    left: 610px; top: 522px;
+    width: 100px; height: 40px ;
+}
+
+#DateNowTime{
+    position: absolute;
+    left: 764px; top: 164px;
+    width: 100px; height: 40px ;
+}
+
+#DateNowDate{
+    position: absolute;
+    left: 764px; top: 137px;
+    width: 100px; height: 40px ;
+}

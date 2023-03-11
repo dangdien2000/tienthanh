@@ -1,0 +1,29 @@
+#Screen_5{
+    position:absolute;
+    background-color: #ffffff;
+    left: 180px; top: 60px;
+    width: 928px; height: 664px ;
+
+}
+#Screen_5 p{
+    margin: 10px;
+    padding: 0;
+    list-style: none;
+    color: rgb(10, 10, 10);
+}
+
+input{
+width: 10%;
+  padding: 0px 0px;
+  margin: 0 0;
+  box-sizing: border-box;
+  border: 0px solid #000000;
+  border-radius: 4px;
+  height: 40px;
+  background-color: #e9eea4;
+  font-style: normal;
+  font-size: large;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  color: #2108ff;
+}

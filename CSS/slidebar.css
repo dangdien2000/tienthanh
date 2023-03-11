@@ -1,0 +1,59 @@
+#slidebar{
+    
+
+}
+
+#btt_Screen_Main{
+    position:absolute;
+    background-color: rgb(42, 165, 48);
+    display: inline;
+    width: 160px; height: 50px ;
+    left: 5px; top: 60px;
+}
+
+#btt_Screen_1{
+    position:absolute;
+    background-color: rgb(42, 165, 48);
+    display: inline;
+    width: 160px; height: 50px ;
+    left: 5px; top: 120px;
+}
+
+#btt_Screen_2{
+    position:absolute;
+    background-color: rgb(42, 165, 48);
+    display: inline;
+    width: 160px; height: 50px ;
+    left: 5px; top: 180px;
+}
+
+#btt_Screen_3{
+    position:absolute;
+    background-color: rgb(42, 165, 48);
+    display: inline;
+    width: 160px; height: 50px ;
+    left: 5px; top: 240px;
+}
+
+#btt_Screen_4{
+    position:absolute;
+    background-color: rgb(42, 165, 48);
+    display: inline;
+    width: 160px; height: 50px ;
+    left: 5px; top: 300px;
+}
+
+#btt_Screen_5{
+    position:absolute;
+    background-color: rgb(42, 165, 48);
+    display: inline;
+    width: 160px; height: 50px ;
+    left: 5px; top: 360px;
+}
+#btt_Screen_6{
+    position:absolute;
+    background-color: rgb(42, 165, 48);
+    display: inline;
+    width: 160px; height: 50px ;
+    left: 5px; top: 420px;
+}

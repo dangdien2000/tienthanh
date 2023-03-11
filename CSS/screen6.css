@@ -1,0 +1,13 @@
+#Screen_6{
+    position:absolute;
+    background-color: #ffffff;
+    left: 180px; top: 60px;
+    width: 928px; height: 664px ;
+
+}
+#Screen_6 p{
+    margin: 10px;
+    padding: 0;
+    list-style: none;
+    color: rgb(13, 14, 13);
+  }

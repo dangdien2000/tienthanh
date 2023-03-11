@@ -1,0 +1,17 @@
+#Screen_1{
+    position:absolute;
+    background-color: #ffffff;
+    left: 180px; top: 60px;
+    width: 928px; height: 664px ;
+
+}
+#Screen_1 p{
+    margin: 10px;
+    padding: 0;
+    list-style: none;
+    color: rgb(10, 10, 10);
+  }
+ #Screen_1 img{
+    position:absolute;
+    left: 220px; top: 40px;
+ } 

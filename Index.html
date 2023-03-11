@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="FB/jquery-3.2.1.min.js"></script>
+        <script src="FB/raphael.2.1.0.min.js"></script>
+        <script src="FB/justgage.1.0.1.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
+        <script src="FB/justgage.1.0.1.min.js"></script>
+        <!-- ////////////// GỌI CÁC CSS //////////////  -->
+        <link rel="stylesheet" href= "CSS/button.css">
+        <link rel="stylesheet" href= "CSS/main_Screen.css">
+        <link rel="stylesheet" href= "CSS/screen_Auto.css">
+        <link rel="stylesheet" href= "CSS/screen1.css">
+        <link rel="stylesheet" href= "CSS/screen2.css">
+        <link rel="stylesheet" href= "CSS/screen3.css">
+        <link rel="stylesheet" href= "CSS/screen4.css">
+        <link rel="stylesheet" href= "CSS/screen5.css">
+        <link rel="stylesheet" href= "CSS/screen6.css">
+        <link rel="stylesheet" href= "CSS/slidebar.css">
+
+        <title>Scada Webserver</title>
+
+        <!-- ////////////// CHƯƠNG TRÌNH CON //////////////  -->
+        <script src="FC/FC1_Common.js"></script>
+        <script src="FC/FC1_UserManagement.js"></script>
+    </head>
+    <header>
+      <img src="images/logo.png" alt="" width="auto" height="auto"> 
+
+    </header>
+    <!-- Phần thân của website-->
+    <body>
+      
+      <div id = "slidebar">
+        <button class="button" id = "btt_Screen_Main" onclick="fn_ScreenChange ('Screen_Main', 'Screen_1', 'Screen_2', 'Screen_3', 'Screen_4', 'Screen_5', 'Screen_6'); btt_Auto();"> MAIN 
+        </button>
+
+        <button class="button" id = "btt_Screen_1" onclick="fn_ScreenChange ( 'Screen_1', 'Screen_Main','Screen_2', 'Screen_3', 'Screen_4', 'Screen_5', 'Screen_6');"> 1-ANALOG MODULE
+        </button>
+
+        <button class="button" id = "btt_Screen_2" onclick="fn_ScreenChange ( 'Screen_2', 'Screen_3', 'Screen_Main', 'Screen_4', 'Screen_5', 'Screen_6', 'Screen_1');"> 2-DRIVE CONTROL
+        </button>
+
+        <button class="button" id = "btt_Screen_3" onclick="fn_ScreenChange ( 'Screen_3', 'Screen_4', 'Screen_5', 'Screen_Main',  'Screen_6', 'Screen_1', 'Screen_2');"> 3-MODBUS COMM
+        </button>
+
+        <button class="button" id = "btt_Screen_4" onclick="fn_ScreenChange ( 'Screen_4', 'Screen_5', 'Screen_6',  'Screen_1', 'Screen_Main','Screen_2','Screen_3');"> 4-TREND VIEW
+        </button>
+
+        <button class="button" id = "btt_Screen_5" onclick="fn_ScreenChange ( 'Screen_5', 'Screen_6', 'Screen_1', 'Screen_2','Screen_3', 'Screen_Main', 'Screen_4');"> 5-ALARMS
+        </button>
+
+        <button class="button" id = "btt_Screen_6" onclick="fn_ScreenChange ( 'Screen_6','Screen_1', 'Screen_2', 'Screen_3', 'Screen_4', 'Screen_5', 'Screen_Main',);"> 6-INFORMATION
+        </button>
+
+      </div>
+
+      
+      
+      <div id ="Screen_1">
+       <h1>SCREEN 1 - ANALOG MODULE </h1> 
+        <h2>@ TEMPERATURE: 0-100 oC / 100-0 oC</h2>
+        
+            <p>LIMIT HIGH # 2 : 90 oC - 4</p>
+            <p>LIMIT HIGH # 1 : 80 oC - 3</p>
+            <p>LIMIT LOW- # 1 : 20 oC - 2</p>
+            <p>LIMIT LOW- # 2 : 10 oC - 1</p>
+            <P>FROM 20 oC ----- 80 oC - 0</P>
+            <p><input id="tbx_lit" disabled="disabled" type="text" /> </p>   
+            <img src="images/process.png" alt="" width="auto" height="auto"> 
+            
+        
+      </div>
+
+      <div id ="Screen_2">
+        <h1>SCREEN 2 - DRIVE CONTROL</h1>
+        
+        <H2>@ DRIVE STATUS</H2>
+        <P>ON 1/ OFF 0</P>
+        <p><input id="tbx_driCon" disabled="disabled" type="text" /></p>
+        <h2>@ DRIVE FREQUENCY: 0-60 Hz</h2>
+            <p> 00.00 oC - 20.00 oC : 10 Hz = 1</p>
+            <p> 20.00 oC  - 30.00 oC   : 20 Hz = 2</p>
+            <p> 30.00 oC   - 40.00 oC   : 30 Hz = 3</p>
+            <p> 40.00 oC   - 50.00 oC   : 40 Hz = 4</p>
+            <p> 50.00 oC   - 60.00 oC   : 50 Hz = 5 </p>
+            <p> 60.00 oC   - 70.00 oC   : 60 Hz = 6</p>
+            <p> 70.00 oC   - 99.00 oC   : 55 Hz = 7</p>
+            
+            
+            <p><input id="tbx_tim" disabled="disabled" type="text" /></p>
+            <img src="images/drive.png" alt="" width="auto" height="auto"> 
+      </div>
+
+      <div id ="Screen_3">
+        <h1>SCREEN 3 - MODBUS COMM</h1>
+        <H2>@ MODBUS STATUS </H2>
+        <P>BUSY 1/ NOT 0</P>
+        <p><input id="tbx_modCon" disabled="disabled" type="text" /></p>
+        <img src="images/s71200.png" alt="" width="auto" height="auto"> 
+        <!--<p><img src="images/modbus.png" alt="" width="auto" height="auto"> </p>-->
+      </div>
+
+      <div id ="Screen_4">
+        <H1>SCREEN 4 - TREND VIEW </H1>
+        <P>https://plotly.com/javascript/getting-started/</P>
+        <div id="tester" style="width:600px;height:250px;"></div>
+      </div>
+
+      <div id ="Screen_5">
+        <H1>SCREEN 5 - ALARMS</H1>
+        <H2>@ OPERATION HOUR & </H2>
+        <P>0 ------- 1,000 HRS : 1</P>
+        <P>1,000 --- 2,000 HRS : 2</P>
+        <P>2,000 --- 3,000 HRS : 3</P>
+        <P>3,000 - 4,000 HRS : 3</P>
+        <input id="valueInt[0]"/>
+        <H2>@ WATER CONSUMPTION</H2>
+        <P>0 ----------- 50,000 GAL : 0</P>
+        <P>50,000 ----- 100,000 GAL : 1</P>
+        <P>100,000 -----200,000 GAL : 2</P>
+        <P>200,000 ---- 300,000 GAL : 3</P>
+        <input id="valueInt[1]"/>
+       
+        
+        
+      </div>
+
+      <div id ="Screen_6">
+        <h2>SYSTEM MONITORING BY WEBSERVER</h2>
+        <h5>HARDWARE:</h5>
+        <p>SIEMENS PLC S7 1200 CPU 1212C DCDCDC OR RELAY</p>
+        <p>VIETTEL GATEWAY (INTERNET MODERM)</p>
+        <p>NETGEAR WIRELESS ROUTER</p>
+        <p>MODBUS COMMUNICATION MODULE 6ES72411CH301XB0</p>
+        <p>MITSUBISHI DRIVE FR E700</p>
+        <h5>SOFTWARE:</h5>
+        <p>TIA PORTAL V15.1</p>
+        <p>VISUAL STUDIO</p>
+        <h5>LOCATION: CHANGSHIN CO, LTD</h5>
+        <p>ADD: DONG NAI PROVINCE - VIETNAM</p>
+        <h5>DISCRIPTION</h5>
+        <p>1-INLET VALVE</p>
+        <p>2-TEMP. SENSOR</p>
+        <p>3-TEMP. DISPLAY</p>
+        <p>4-WATER TANK</p>
+        <p>5-SOLENOID VALVE</p>
+        <p>6-DRIVE FREQUENCY DISPLAY</p>
+        <p>7-PUMP</p>
+        <p>8-WATER METER</p>
+        <p>9-OPER. HOUR DISPLAY</p>
+        
+      </div>
+
+
+
+      <div id = "Screen_Main">
+        <img src="images/hmi.png" alt="" width="auto" height="auto"><br/>
+        <input id="tbx_anaCon" disabled="disabled" type="text" />
+        <input id="tbx_temCon" disabled="disabled" type="text" />
+        <input id="tbx_hzzCon" disabled="disabled" type="text" />
+        <input id="tbx_hrsCon" disabled="disabled" type="text" />
+        <input id="tbx_metCon" disabled="disabled" type="text" />
+        <h5 id="DateNowTime">12:0:0 PM</h5>
+        <h5 id="DateNowDate">1/27/2023</h5>
+        
+      </div>
+
+    </body>
+
+    <footer>
+    <div id = "copywrite">
+      <div id="pos3">				
+      </div>
+      <p>@ 2023 - Designed by - <a rel="nofollow" href="https://locnuoctienthanh.net" title="free CSS templates"> locnuoctienthanh.net </a></p>
+
+    </div>
+        
+    </footer>
+    <script>
+      TESTER = document.getElementById('tester');
+      Plotly.newPlot( TESTER, [{
+      x: [1, 2, 3, 4, 5],
+      y: [1, 2, 3, 4, 5] }], 
+      {
+      margin: { t: 0 } 
+      } );
+    </script>
+</html>
